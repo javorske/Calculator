@@ -15,6 +15,7 @@ namespace kalkulator
             Console.WriteLine("2. Odejmowanie.");
             Console.WriteLine("3. Mnozenie.");
             Console.WriteLine("4. Dzielenie.");
+
             int check = int.Parse(Console.ReadLine());
 
             switch (check)
