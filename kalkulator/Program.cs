@@ -11,7 +11,7 @@ namespace kalkulator
         static void Main(string[] args)
         {
             bool exitLoop = true;
-            int check = 0;
+            int check;
             do
             {
                 try
@@ -47,7 +47,7 @@ namespace kalkulator
                 }
                 catch(FormatException)
                 {
-                    Console.WriteLine("Nie wybrano zadnej opcji");
+                    Console.WriteLine("Nie wybrano zadnej opcji, badz podano zly znak.");
                     Console.ReadKey();
                     Console.Clear();
                 }
