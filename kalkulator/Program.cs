@@ -35,7 +35,9 @@ namespace kalkulator
             int liczba1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj druga liczbe: ");
             int liczba2 = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Wynik to: " + (liczba1 + liczba2) + ".") ;
+
             Console.ReadKey();
         }
         public static void Odejmowanie()
@@ -44,7 +46,9 @@ namespace kalkulator
             int liczba1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj druga liczbe: ");
             int liczba2 = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Wynik to: " + (liczba1 - liczba2) + ".");
+
             Console.ReadKey();
         }
     }
