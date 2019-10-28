@@ -15,7 +15,6 @@ namespace kalkulator
             Console.WriteLine("2. Odejmowanie.");
             Console.WriteLine("3. Mnozenie.");
             Console.WriteLine("4. Dzielenie.");
-
             int check = int.Parse(Console.ReadLine());
 
             switch (check)
@@ -25,6 +24,9 @@ namespace kalkulator
                     break;
                 case 2:
                     Odejmowanie();
+                    break;
+                case 3:
+                    Mnozenie();
                     break;
                 default:
                     break;
@@ -36,9 +38,7 @@ namespace kalkulator
             int liczba1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj druga liczbe: ");
             int liczba2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Wynik to: " + (liczba1 + liczba2) + ".") ;
-
+            Console.WriteLine("Wynik dodawania to: " + (liczba1 + liczba2) + ".") ;
             Console.ReadKey();
         }
         public static void Odejmowanie()
@@ -47,9 +47,16 @@ namespace kalkulator
             int liczba1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj druga liczbe: ");
             int liczba2 = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Wynik to: " + (liczba1 - liczba2) + ".");
-
+            Console.WriteLine("Wynik odejmowania to: " + (liczba1 - liczba2) + ".");
+            Console.ReadKey();
+        }
+        public static void Mnozenie()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe: ");
+            int liczba1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe: ");
+            int liczba2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Wynik mnozenia to: " + (liczba1 * liczba2) + ".");
             Console.ReadKey();
         }
     }
