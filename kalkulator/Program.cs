@@ -15,24 +15,42 @@ namespace kalkulator
             Console.WriteLine("2. Odejmowanie.");
             Console.WriteLine("3. Mnozenie.");
             Console.WriteLine("4. Dzielenie.");
+
             int check = int.Parse(Console.ReadLine());
 
             switch (check)
             {
                 case 1:
-                    Console.WriteLine(Dodawanie());
-                    Console.ReadKey();
+                    Dodawanie();
+                    break;
+                case 2:
+                    Odejmowanie();
                     break;
                 default:
                     break;
             }
         }
-        public static int Dodawanie()
+        public static void Dodawanie()
         { 
-            Console.WriteLine("Podaj pierwsza liczbe");
+            Console.WriteLine("Podaj pierwsza liczbe: ");
             int liczba1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe: ");
             int liczba2 = int.Parse(Console.ReadLine());
-            return liczba1 + liczba2;
+
+            Console.WriteLine("Wynik to: " + (liczba1 + liczba2) + ".") ;
+
+            Console.ReadKey();
+        }
+        public static void Odejmowanie()
+        {
+            Console.WriteLine("Podaj pierwsza liczbe: ");
+            int liczba1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj druga liczbe: ");
+            int liczba2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Wynik to: " + (liczba1 - liczba2) + ".");
+
+            Console.ReadKey();
         }
     }
 }
