@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DivideOperation.cs" />
+    <Compile Include="MultiplyOperation.cs" />
+    <Compile Include="NumbersGetter.cs" />
+    <Compile Include="IMathOperations.cs" />
+    <Compile Include="OperationNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubtractionOperation.cs" />
+    <Compile Include="SumOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
