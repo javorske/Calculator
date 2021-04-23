@@ -15,14 +15,15 @@ namespace kalkulator
             MathOperations mathOperations = new MathOperations();
             do
             {
+                             
+                    Console.WriteLine("Choose operation:");
+                    Console.WriteLine("1. Sum.");
+                    Console.WriteLine("2. Substraction.");
+                    Console.WriteLine("3. Multiplying.");
+                    Console.WriteLine("4. Dividing.");
+                    Console.WriteLine("0. Quit.\n");
                 try
-                {                
-                    Console.WriteLine("Wybierz opcje:");
-                    Console.WriteLine("1. Dodawanie.");
-                    Console.WriteLine("2. Odejmowanie.");
-                    Console.WriteLine("3. Mnozenie.");
-                    Console.WriteLine("4. Dzielenie.");
-                    Console.WriteLine("0. Zakończ.");
+                {
                     caseChoice = int.Parse(Console.ReadLine());
                     switch (caseChoice)
                     {
@@ -30,10 +31,10 @@ namespace kalkulator
                             mathOperations.Sum();
                             break;
                         case 2:
-                            mathOperations.Subtraction();
+                            mathOperations.Subtract();
                             break;
                         case 3:
-                            mathOperations.Multiplication();
+                            mathOperations.Multiply();
                             break;
                         case 4:
                             mathOperations.Divide();
@@ -48,7 +49,7 @@ namespace kalkulator
                 }
                 catch(FormatException)
                 {
-                    Console.WriteLine("Nie wybrano zadnej opcji, badz podano zly znak.");
+                    Console.WriteLine("No option selected or wrong character entered.");
                     Console.ReadKey();
                     Console.Clear();
                 }
@@ -58,7 +59,7 @@ namespace kalkulator
         
         public static void SwitchDefault()
         {
-            Console.WriteLine("Nie wybrano opcji.");
+            Console.WriteLine("No option selected.");
             Console.ReadKey();
             Console.Clear();
         }

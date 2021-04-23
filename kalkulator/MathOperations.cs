@@ -8,53 +8,54 @@ namespace kalkulator
 {
     public class MathOperations
     {
+        int[] numberArr;
         public void Sum()
         {
-            Console.WriteLine("Podaj pierwsza liczbe: ");
-            int liczba1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj druga liczbe: ");
-            int liczba2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Wynik dodawania to: " + (liczba1 + liczba2) + ".");
-            Console.ReadKey();
-            Console.Clear();
+            numberArr = EnterNumbers();
+            Console.WriteLine("Result of sum is: " + (numberArr[0] + numberArr[1]) + ".");
+            ClearConsole();
         }
 
         public void Subtract()
         {
-            Console.WriteLine("Podaj pierwsza liczbe: ");
-            int liczba1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj druga liczbe: ");
-            int liczba2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Wynik odejmowania to: " + (liczba1 - liczba2) + ".");
-            Console.ReadKey();
-            Console.Clear();
+            numberArr = EnterNumbers();
+            Console.WriteLine("Result of substracting is: " + (numberArr[0] - numberArr[1]) + ".");
+            ClearConsole();
         }
 
         public void Multiply()
         {
-            Console.WriteLine("Podaj pierwsza liczbe: ");
-            int liczba1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj druga liczbe: ");
-            int liczba2 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Wynik mnozenia to: " + (liczba1 * liczba2) + ".");
-            Console.ReadKey();
-            Console.Clear();
+            numberArr = EnterNumbers();
+            Console.WriteLine("Result of multiplying is: " + (numberArr[0] * numberArr[1]) + ".");
+            ClearConsole();
         }
 
         public void Divide()
         {
-            Console.WriteLine("Podaj pierwsza liczbe: ");
-            int liczba1 = int.Parse(Console.ReadLine());
-            Console.WriteLine("Podaj druga liczbe: ");
-            int liczba2 = int.Parse(Console.ReadLine());
             try
             {
-                Console.WriteLine("Wynik dzielenia to: " + (liczba1 / liczba2) + ".");
+                numberArr = EnterNumbers();
+                Console.WriteLine("Result of dividing is: " + (numberArr[0] / numberArr[1]) + ".");
             }
             catch (DivideByZeroException)
             {
-                Console.WriteLine("Nie mozna dzielic przez zero.");
+                Console.WriteLine("You can't divide by zero.");
             }
+            ClearConsole();
+        }
+
+        private int[] EnterNumbers()
+        {
+            Console.Clear();
+            int[] numArr = new int[2];
+            Console.WriteLine("Enter first number: ");
+            numArr[0] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter second number: ");
+            numArr[1] = int.Parse(Console.ReadLine());
+            return numArr;
+        }
+        private void ClearConsole()
+        {
             Console.ReadKey();
             Console.Clear();
         }
