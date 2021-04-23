@@ -30,7 +30,7 @@ namespace kalkulator
             Console.Clear();
         }
 
-        public void Multiplication()
+        public void Multiply()
         {
             Console.WriteLine("Podaj pierwsza liczbe: ");
             int liczba1 = int.Parse(Console.ReadLine());
