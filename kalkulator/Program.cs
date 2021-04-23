@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace kalkulator
 {
-    class Program : OperationNumbers
+    class Program
     {
         static void Main(string[] args)
         {
