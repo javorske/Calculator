@@ -19,7 +19,7 @@ namespace kalkulator
             Console.Clear();
         }
 
-        public void Subtraction()
+        public void Subtract()
         {
             Console.WriteLine("Podaj pierwsza liczbe: ");
             int liczba1 = int.Parse(Console.ReadLine());
