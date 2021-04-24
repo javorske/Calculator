@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    abstract class NumbersGetter : IMathOperations
+    abstract class NumbersGetter
     {
         public OperationNumbers EnterNumbers()
         {
@@ -23,6 +23,5 @@ namespace Calculator
             Console.ReadKey();
             Console.Clear();
         }
-        public abstract void MathOperation();
     }
 }

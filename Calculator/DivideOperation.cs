@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class DivideOperation : NumbersGetter
+    class DivideOperation : NumbersGetter, IMathOperations
     {
         OperationNumbers numbers;
 
-        public override void MathOperation()
+        public void MathOperation()
         {
             try
             {

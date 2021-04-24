@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class MultiplyOperation : NumbersGetter
+    class MultiplyOperation : NumbersGetter, IMathOperations
     {
         OperationNumbers numbers;
 
-        public override void MathOperation()
+        public void MathOperation()
         {
             numbers = EnterNumbers();
             Console.WriteLine("Result of multiplication is: {0}.", numbers.Number1 * numbers.Number2);

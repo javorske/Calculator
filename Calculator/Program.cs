@@ -12,6 +12,7 @@ namespace Calculator
         {
             bool exitLoop = true;
             int caseChoice;
+            IMathOperations mathOperations;
             do
             {                             
                     Console.WriteLine("Choose operation:");
@@ -26,20 +27,20 @@ namespace Calculator
                     switch (caseChoice)
                     {
                         case 1:
-                            SumOperation sum = new SumOperation();
-                            sum.MathOperation();
+                            mathOperations = new SumOperation();
+                            mathOperations.MathOperation();
                             break;
                         case 2:
-                            SubtractionOperation subtraction = new SubtractionOperation();
-                            subtraction.MathOperation();
+                            mathOperations = new SubtractionOperation();
+                            mathOperations.MathOperation();
                             break;
                         case 3:
-                            MultiplyOperation multiplication = new MultiplyOperation();
-                            multiplication.MathOperation();
+                            mathOperations = new MultiplyOperation();
+                            mathOperations.MathOperation();
                             break;
                         case 4:
-                            DivideOperation division = new DivideOperation();
-                            division.MathOperation();
+                            mathOperations = new DivideOperation();
+                            mathOperations.MathOperation();
                             break;
                         default:
                             SwitchDefault();
