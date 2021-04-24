@@ -24,31 +24,29 @@ namespace Calculator
                 try
                 {
                     caseChoice = int.Parse(Console.ReadLine());
+                    mathOperations = new NullOperation();
                     switch (caseChoice)
                     {
                         case 1:
                             mathOperations = new SumOperation();
-                            mathOperations.MathOperation();
                             break;
                         case 2:
                             mathOperations = new SubtractionOperation();
-                            mathOperations.MathOperation();
                             break;
                         case 3:
                             mathOperations = new MultiplyOperation();
-                            mathOperations.MathOperation();
                             break;
                         case 4:
                             mathOperations = new DivideOperation();
-                            mathOperations.MathOperation();
-                            break;
-                        default:
-                            SwitchDefault();
                             break;
                         case 0:
                             exitLoop = false;
                             break;
+                        default:
+                            SwitchDefault();
+                            break;
                     }
+                    mathOperations.MathOperation();
                 }
                 catch(FormatException)
                 {
