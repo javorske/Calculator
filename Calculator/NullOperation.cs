@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kalkulator
+namespace Calculator
 {
-    interface IMathOperations
+    class NullOperation : IMathOperations
     {
-        void MathOperation();
+        public void MathOperation()
+        {
+        }
     }
 }

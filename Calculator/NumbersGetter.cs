@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kalkulator
+namespace Calculator
 {
-    abstract class NumbersGetter : IMathOperations
+    abstract class NumbersGetter
     {
         public OperationNumbers EnterNumbers()
         {
@@ -23,6 +23,5 @@ namespace kalkulator
             Console.ReadKey();
             Console.Clear();
         }
-        public abstract void MathOperation();
     }
 }

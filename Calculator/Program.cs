@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kalkulator
+namespace Calculator
 {
     class Program
     {
@@ -12,6 +12,7 @@ namespace kalkulator
         {
             bool exitLoop = true;
             int caseChoice;
+            IMathOperations mathOperations;
             do
             {                             
                     Console.WriteLine("Choose operation:");
@@ -23,31 +24,29 @@ namespace kalkulator
                 try
                 {
                     caseChoice = int.Parse(Console.ReadLine());
+                    mathOperations = new NullOperation();
                     switch (caseChoice)
                     {
                         case 1:
-                            SumOperation sum = new SumOperation();
-                            sum.MathOperation();
+                            mathOperations = new SumOperation();
                             break;
                         case 2:
-                            SubtractionOperation subtraction = new SubtractionOperation();
-                            subtraction.MathOperation();
+                            mathOperations = new SubtractionOperation();
                             break;
                         case 3:
-                            MultiplyOperation multiplication = new MultiplyOperation();
-                            multiplication.MathOperation();
+                            mathOperations = new MultiplyOperation();
                             break;
                         case 4:
-                            DivideOperation division = new DivideOperation();
-                            division.MathOperation();
-                            break;
-                        default:
-                            SwitchDefault();
+                            mathOperations = new DivideOperation();
                             break;
                         case 0:
                             exitLoop = false;
                             break;
+                        default:
+                            SwitchDefault();
+                            break;
                     }
+                    mathOperations.MathOperation();
                 }
                 catch(FormatException)
                 {

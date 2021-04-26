@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace kalkulator
+namespace Calculator
 {
-    class DivideOperation : NumbersGetter
+    class DivideOperation : NumbersGetter, IMathOperations
     {
         OperationNumbers numbers;
 
-        public override void MathOperation()
+        public void MathOperation()
         {
             try
             {
