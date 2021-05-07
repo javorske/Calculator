@@ -11,20 +11,22 @@ namespace Calculator
         static void Main(string[] args)
         {
             bool exitLoop = true;
-            int caseChoice;
+            bool isInputCorrect;
             IMathOperations mathOperations;
+
             do
             {                             
-                    Console.WriteLine("Choose operation:");
-                    Console.WriteLine("1. Add.");
-                    Console.WriteLine("2. Subtract.");
-                    Console.WriteLine("3. Multiply.");
-                    Console.WriteLine("4. Divide.");
-                    Console.WriteLine("0. Quit.\n");
-                try
+                Console.WriteLine("Choose operation:");
+                Console.WriteLine("1. Add.");
+                Console.WriteLine("2. Subtract.");
+                Console.WriteLine("3. Multiply.");
+                Console.WriteLine("4. Divide.");
+                Console.WriteLine("0. Quit.\n");
+                isInputCorrect = int.TryParse(Console.ReadLine(), out int caseChoice);
+                if (isInputCorrect)
                 {
-                    caseChoice = int.Parse(Console.ReadLine());
                     mathOperations = new NullOperation();
+
                     switch (caseChoice)
                     {
                         case 1:
@@ -43,24 +45,21 @@ namespace Calculator
                             exitLoop = false;
                             break;
                         default:
-                            SwitchDefault();
+                            PrintNoOptionSelected();
                             break;
                     }
                     mathOperations.MathOperation();
                 }
-                catch(FormatException)
+                else
                 {
-                    Console.WriteLine("No option selected or wrong character entered.");
-                    Console.ReadKey();
-                    Console.Clear();
+                    PrintNoOptionSelected();
                 }
-
             } while (exitLoop);
         }
         
-        public static void SwitchDefault()
+        public static void PrintNoOptionSelected()
         {
-            Console.WriteLine("No option selected.");
+            Console.WriteLine("No option selected or wrong character entered.");
             Console.ReadKey();
             Console.Clear();
         }
