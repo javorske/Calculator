@@ -14,16 +14,15 @@ namespace Calculator
             bool exitLoop = true;
             bool isInputCorrect;
             BackendLogic.IMathOperations mathOperations;
+            ResultDisplayer resultDisplayer = new ResultDisplayer();
+            MenuBuilder menuBuilder = new MenuBuilder();
 
             do
             {
-                Console.WriteLine("Choose operation:");
-                Console.WriteLine("1. Add.");
-                Console.WriteLine("2. Subtract.");
-                Console.WriteLine("3. Multiply.");
-                Console.WriteLine("4. Divide.");
-                Console.WriteLine("0. Quit.\n");
+                menuBuilder.DisplayMenu();
+
                 isInputCorrect = int.TryParse(Console.ReadLine(), out int caseChoice);
+
                 if (isInputCorrect)
                 {
                     mathOperations = new BackendLogic.NullOperation();
@@ -49,8 +48,7 @@ namespace Calculator
                             PrintNoOptionSelected();
                             break;
                     }
-                    ResultDisplayer dis = new ResultDisplayer();
-                    dis.displayResult(mathOperations.MathOperation());
+                    resultDisplayer.DisplayResult(mathOperations.MathOperation());
                 }
                 else
                 {

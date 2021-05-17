@@ -8,9 +8,9 @@ namespace Calculator
 {
     class ResultDisplayer
     {
-        public void displayResult(object resultNumbers)
+        public void DisplayResult(object resultNumbers)
         {
-            if (resultNumbers is Exception )
+            if (resultNumbers is Exception)
             {
                 Console.WriteLine("You can't divide by zero.");
                 Console.ReadKey();
