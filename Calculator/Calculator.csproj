@@ -4,6 +4,6 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BackendLogic\BackendLogic.csproj" />
+    <ProjectReference Include="..\BackendLogic\Calculator.Backend.csproj" />
   </ItemGroup>
 </Project>

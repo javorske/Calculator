@@ -9,13 +9,13 @@ namespace BackendLogic
     public class SumOperation : NumbersGetter, IMathOperations
     {
         OperationNumbers numbers;
-        decimal sum;
+        decimal result;
 
         public object MathOperation()
         {
             numbers = EnterNumbers();
-            sum = numbers.Number1 + numbers.Number2;
-            return sum;
+            result = numbers.Number1 + numbers.Number2;
+            return result;
         }
     }
 }
