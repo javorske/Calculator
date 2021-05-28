@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace BackendLogic
 {
-    abstract class NumbersGetter
+    public abstract class NumbersGetter
     {
         public OperationNumbers EnterNumbers()
         {
@@ -17,11 +17,6 @@ namespace Calculator
             Console.WriteLine("Enter second number: ");
             numbers.Number2 = decimal.Parse(Console.ReadLine());
             return numbers;
-        }
-        public void ClearConsole()
-        {
-            Console.ReadKey();
-            Console.Clear();
         }
     }
 }

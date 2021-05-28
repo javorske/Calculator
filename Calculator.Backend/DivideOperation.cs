@@ -4,24 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace BackendLogic
 {
-    class DivideOperation : NumbersGetter, IMathOperations
+    public class DivideOperation : NumbersGetter, IMathOperations
     {
         OperationNumbers numbers;
+        decimal result;
 
-        public void MathOperation()
+        public object MathOperation()
         {
             try
             {
                 numbers = EnterNumbers();
-                Console.WriteLine("Result of dividing is: {0}.", numbers.Number1 / numbers.Number2);
+                result = numbers.Number1 / numbers.Number2;
+                return result;
             }
-            catch (DivideByZeroException)
+            catch (DivideByZeroException ex)
             {
-                Console.WriteLine("You can't divide by zero.");
+                return ex;
             }
-            ClearConsole();
         }
     }
 }
