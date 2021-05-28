@@ -3,4 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator.Backend\Calculator.Backend.csproj" />
+  </ItemGroup>
 </Project>

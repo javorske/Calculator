@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace BackendLogic
 {
-    class NullOperation : IMathOperations
+    public class NullOperation : IMathOperations
     {
-        public void MathOperation()
+        public object MathOperation()
         {
+            return null;
         }
     }
 }

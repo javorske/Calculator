@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace BackendLogic
 {
-    interface IMathOperations
+    public interface IMathOperations
     {
-        void MathOperation();
+        object MathOperation();
     }
 }
