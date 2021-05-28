@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BackendLogic;
 
 namespace Calculator
 {
@@ -12,34 +13,33 @@ namespace Calculator
         {
             bool exitLoop = true;
             bool isInputCorrect;
-            IMathOperations mathOperations;
+            BackendLogic.IMathOperations mathOperations;
+            ResultDisplayer resultDisplayer = new ResultDisplayer();
+            MenuBuilder menuBuilder = new MenuBuilder();
 
             do
-            {                             
-                Console.WriteLine("Choose operation:");
-                Console.WriteLine("1. Add.");
-                Console.WriteLine("2. Subtract.");
-                Console.WriteLine("3. Multiply.");
-                Console.WriteLine("4. Divide.");
-                Console.WriteLine("0. Quit.\n");
+            {
+                menuBuilder.DisplayMenu();
+
                 isInputCorrect = int.TryParse(Console.ReadLine(), out int caseChoice);
+
                 if (isInputCorrect)
                 {
-                    mathOperations = new NullOperation();
+                    mathOperations = new BackendLogic.NullOperation();
 
                     switch (caseChoice)
                     {
                         case 1:
-                            mathOperations = new SumOperation();
+                            mathOperations = new BackendLogic.SumOperation();
                             break;
                         case 2:
-                            mathOperations = new SubtractionOperation();
+                            mathOperations = new BackendLogic.SubtractionOperation();
                             break;
                         case 3:
-                            mathOperations = new MultiplyOperation();
+                            mathOperations = new BackendLogic.MultiplyOperation();
                             break;
                         case 4:
-                            mathOperations = new DivideOperation();
+                            mathOperations = new BackendLogic.DivideOperation();
                             break;
                         case 0:
                             exitLoop = false;
@@ -48,7 +48,7 @@ namespace Calculator
                             PrintNoOptionSelected();
                             break;
                     }
-                    mathOperations.MathOperation();
+                    resultDisplayer.DisplayResult(mathOperations.MathOperation());
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace Calculator
                 }
             } while (exitLoop);
         }
-        
+
         public static void PrintNoOptionSelected()
         {
             Console.WriteLine("No option selected or wrong character entered.");
